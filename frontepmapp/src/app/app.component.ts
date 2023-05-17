@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {CrudPruebaempService} from 'src/app/models/crud-pruebaemp.service';
@@ -11,7 +12,13 @@ import Swal from 'sweetalert2';
 export class AppComponent {
 
   title = 'Prueba Tecnica Electric Power Market';
-
+  
+  infogra:any;
+  jsongra:any;
+  
+  titlepie : any;
+  titlepie2: any;
+  
   constructor(
     private CPEM: CrudPruebaempService,
     private router: Router
@@ -37,7 +44,12 @@ export class AppComponent {
           confirmButtonText: 'Cerrar' 
         }
       );
+      
+      
+      this.titlepie = res.pie
 
+      this.titlepie2 = res.pie2
+ 
      
     },
       error: (err) => {
@@ -55,4 +67,8 @@ export class AppComponent {
 }
 
 
+
+function forEach(values: { name: string; gender: string; }, arg1: (value: any, key: any) => void, log: any[]) {
+  throw new Error('Function not implemented.');
+}
 
